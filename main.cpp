@@ -19,7 +19,8 @@ void showMenu()
     cout << "3. What are the applications of AI?\n";
     cout << "4. What are the challenges of AI?\n";
     cout << "5. What is the future of AI?\n";
-    cout << "6. Exit\n";
+    cout << "6. What are ethical considerations in AI?\n";
+    cout << "7. Exit\n";
     cout << "==========================\n";
 
 }
@@ -43,7 +44,7 @@ int main ()
     showMenu();
 
     // Prompt the user for their choice
-    cout << "Enter your choice (1-6): ";
+    cout << "Enter your choice (1-7): ";
     cin >> choice;
     cin.ignore(); // Clear the newline character from the input buffer
 
