@@ -22,14 +22,43 @@ void showMenu()
     cout << "6. Exit\n";
     cout << "==========================\n";
 
+}
+
+//function to explain how AI works
+void explainHowAIWorks(int choice)
+{
+    // Clear the console for better readability
+    cout << "\033[2J\033[1;1H"; // ANSI escape code to clear the console and move cursor to top-left
+    cout << "\033[1m\nHow AI Works:\n\033[0m";
+    cout << "Artificial Intelligence (AI) works by simulating human intelligence processes through algorithms and computational models.\n";
+    cout << "It involves machine learning, where systems learn from data, and deep learning, which uses neural networks to analyze complex patterns.\n";
+    cout << "AI systems can process vast amounts of information, recognize patterns, and make decisions based on learned experiences.\n";
+}
+
+int main ()
+{
+    int choice;
+    
+    //displays the menu first
+    showMenu();
+
     // Prompt the user for their choice
     cout << "Enter your choice (1-6): ";
     cin >> choice;
     cin.ignore(); // Clear the newline character from the input buffer
 
-}
+    switch (choice)
+    {
+    case 1:
+        explainHowAIWorks(choice);
+        break;
+    case 2:
+        cout << "Exiting the program. Goodbye!\n";
+        break;
+    default:
+        cout << "Invalid choice. Please select a valid option.\n";
+        break;
+    }
 
-int main ()
-{
-    showMenu();
+    return 0;
 }
