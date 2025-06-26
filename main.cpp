@@ -25,6 +25,18 @@ void showMenu()
 
 }
 
+// Function to explain what Artificial Intelligence is
+void explainWhatIsAI()
+{
+    // Clear the console for better readability
+    cout << "\033[2J\033[1;1H"; // ANSI escape code to clear the screen
+    cout << "\033[1m\nWhat is Artificial Intelligence?\n\033[0m";
+    cout << "Artificial Intelligence (AI) is a branch of computer science focused on building smart machines\n";
+    cout << "that can perform tasks that typically require human intelligence.\n";
+    cout << "These tasks include learning, reasoning, problem-solving, understanding language, and perception.\n";
+    cout << "AI combines algorithms, data, and computing power to mimic human cognitive functions in machines.\n";
+}
+
 //function to explain how AI works
 void explainHowAIWorks(int choice)
 {
@@ -51,10 +63,10 @@ int main ()
     switch (choice)
     {
     case 1:
-        explainHowAIWorks(choice);
+        explainWhatIsAI();
         break;
     case 2:
-        cout << "Exiting the program. Goodbye!\n";
+        explainHowAIWorks(choice);
         break;
     default:
         cout << "Invalid choice. Please select a valid option.\n";
