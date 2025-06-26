@@ -48,6 +48,21 @@ void explainHowAIWorks(int choice)
     cout << "AI systems can process vast amounts of information, recognize patterns, and make decisions based on learned experiences.\n";
 }
 
+// Function to explain the applications of AI
+void explainApplicationsOfAI()
+{
+    // Clear the console for better readability
+    cout << "\033[2J\033[1;1H"; // ANSI escape code to clear the screen
+    cout << "\033[1m\nApplications of Artificial Intelligence:\n\033[0m";
+    cout << "1. Healthcare: AI helps doctors detect diseases, analyze medical data, and assist in surgeries.\n";
+    cout << "2. Transportation: Self-driving cars use AI to drive safely and avoid obstacles.\n";
+    cout << "3. Finance: AI is used to detect fraud, manage investments, and automate trading.\n";
+    cout << "4. Education: AI gives personalized learning, grading assistance, and tutoring support.\n";
+    cout << "5. Retail: Online stores use AI for product recommendations and managing stock.\n";
+    cout << "6. Entertainment: AI creates music, suggests movies, and powers video game characters.\n";
+    cout << "7. Customer Service: Chatbots and virtual assistants answer questions 24/7.\n";
+}
+
 int main ()
 {
     int choice;
@@ -68,6 +83,10 @@ int main ()
     case 2:
         explainHowAIWorks(choice);
         break;
+    case 3:
+        explainApplicationsOfAI();
+        break;
+
     default:
         cout << "Invalid choice. Please select a valid option.\n";
         break;
