@@ -63,6 +63,25 @@ void explainApplicationsOfAI()
     cout << "7. Customer Service: Chatbots and virtual assistants answer questions 24/7.\n";
 }
 
+// Function to explain the challenges of AI
+void challengesofAI()
+{
+    // Clear screen for readability
+    cout << "\033[2J\033[1;1H";
+    
+    // Title in bold
+    cout << "\033[1m\nChallenges of Artificial Intelligence:\n\033[0m";
+
+    // List of challenges using simple terms
+    cout << "1. Bias: AI can be unfair if trained with unfair data.\n";
+    cout << "2. Privacy: AI sometimes needs a lot of personal data.\n";
+    cout << "3. Job loss: AI might replace some human jobs.\n";
+    cout << "4. High cost: Building AI needs strong computers and money.\n";
+    cout << "5. Security: AI can be hacked or misused.\n";
+    cout << "6. Trust: People may not fully trust AI decisions.\n";
+    cout << "7. Control Hard to control or stop powerful AI systems.\n";
+}
+
 int main ()
 {
     int choice;
@@ -86,7 +105,9 @@ int main ()
     case 3:
         explainApplicationsOfAI();
         break;
-
+    case 4:
+        challengesofAI();
+        break;
     default:
         cout << "Invalid choice. Please select a valid option.\n";
         break;
