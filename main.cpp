@@ -82,36 +82,60 @@ void challengesofAI()
     cout << "7. Control     : Hard to control or stop powerful AI systems.\n";
 }
 
+// Function to explain the Future of AI
+void explainFutureOfAI() {
+    cout << "\n\033[1mFuture of AI:\033[0m\n";
+    cout << "The future of Artificial Intelligence is expected to be increasingly transformative across all aspects of society.\n";
+    cout << "AI will become more advanced and personalized, playing a key role in sectors like healthcare, education, transportation and smart cities.\n";
+    cout << "We may see the development of Artificial General Intelligence (AGI), where machines can perform any intellectual task that a human can do.\n";
+    cout << "As AI continues to evolve, it will likely reshape how we work, live and interact with technology, raising both opportunities and ethical challenges.\n";
+}
+
+
+
 int main ()
 {
     int choice;
     
-    //displays the menu first
-    showMenu();
-
-    // Prompt the user for their choice
-    cout << "Enter your choice (1-7): ";
-    cin >> choice;
-    cin.ignore(); // Clear the newline character from the input buffer
-
-    switch (choice)
+    do
     {
-    case 1:
-        explainWhatIsAI();
-        break;
-    case 2:
-        explainHowAIWorks(choice);
-        break;
-    case 3:
-        explainApplicationsOfAI();
-        break;
-    case 4:
-        challengesofAI();
-        break;
-    default:
-        cout << "Invalid choice. Please select a valid option.\n";
-        break;
-    }
+        //displays the menu first
+        showMenu();
+
+        // Prompt the user for their choice
+        cout << "Enter your choice (1-7): ";
+        cin >> choice;
+        cin.ignore(); // Clear the newline character from the input buffer
+
+        switch (choice)
+        {
+            case 1:
+                explainWhatIsAI();
+                break;
+            case 2:
+                explainHowAIWorks(choice);
+                break;
+            case 3:
+                explainApplicationsOfAI();
+                break;
+            case 4:
+                challengesofAI();
+                break;
+            case 5:
+                explainFutureOfAI();
+                break;
+            case 6:
+                explainEthicalConsiderations();
+                break;
+            case 7:
+                cout << "Exiting the program. Goodbye!\n";
+                break;
+            default:
+                cout << "Invalid choice. Please select a valid option.\n";
+                break;
+        }
+
+    } while (choice ! = 7);
 
     return 0;
 }
