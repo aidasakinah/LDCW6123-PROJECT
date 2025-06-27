@@ -14,9 +14,9 @@ void showMenu()
     int choice;
 
     //display the options
-    cout << "\n==========================\n";
-    cout << " Welcome to AI Wonderland\n";
-    cout << "==========================\n";
+    cout << "=========================================\n";
+    cout << "       Welcome to AI Wonderland\n";
+    cout << "=========================================\n";
 
     cout << "Please select your adventure:\n";
     cout << "1. What is Artificial Intelligence?\n";
@@ -26,10 +26,12 @@ void showMenu()
     cout << "5. What is the future of AI?\n";
     cout << "6. What are ethical considerations in AI?\n";
     cout << "7. Basic Rules of AI\n";
-    cout << "8. Exit\n";
-    cout << "\nAfter study, enter 'quiz' to test your understanding!!\n";
-    cout << "==========================\n";
-
+    cout << "8. Impact of AI on Society\n";
+    cout << "9. Famous AI Technologies\n";
+    cout << "10. AI in Everyday Life\n";
+    cout << "\nEnter 'quiz' to test your understanding!!\n";
+    cout << "\nType 'exit' to quit the program.\n";
+    cout << "=========================================\n";
 }
 
 // Function to explain what Artificial Intelligence is
@@ -203,73 +205,6 @@ void explainEthicalConsiderations()
     cin.ignore(10000, '\n'); // Clean up any leftover input
 }
 
-//Quiz function
-void playQuiz() {
-    struct Question {
-        string question;
-        string optionA;
-        string optionB;
-        string optionC;
-        char correctAnswer;
-    };
-
-    vector<Question> quiz = {
-        {"What is the main goal of AI?", "A. To replace computers", "B. To simulate human intelligence", "C. To create websites", 'B'},
-        {"Which of the following is a branch of AI?", "A. Machine Learning", "B. Word Processing", "C. Spreadsheet Management", 'A'},
-        {"AI systems primarily learn through:", "A. Guesswork", "B. Randomness", "C. Data and algorithms", 'C'},
-        {"Which of these is a healthcare AI application?", "A. Weather forecasting", "B. Disease detection", "C. Building bridges", 'B'},
-        {"Which is a major challenge of AI?", "A. Too much oil consumption", "B. Privacy concerns", "C. Climate change", 'B'},
-        {"What might AI impact in the future?", "A. Agriculture only", "B. Just education", "C. All aspects of society", 'C'},
-        {"Ethical AI should avoid:", "A. Transparency", "B. Bias", "C. Accuracy", 'B'},
-        {"AI in finance is used for:", "A. Painting", "B. Fraud detection", "C. Playing music", 'B'},
-        {"Self-driving cars use AI to:", "A. Change colors", "B. Avoid obstacles", "C. Cook food", 'B'},
-        {"What does deep learning use?", "A. Binary trees", "B. Decision charts", "C. Neural networks", 'C'}
-    };
-
-    string input;
-    for (size_t i = 0; i < quiz.size(); ++i) {
-        const auto& q = quiz[i];
-
-        // Show question and options once
-        cout << "\nQuestion " << (i + 1) << ": " << q.question << "\n";
-        cout << q.optionA << "\n" << q.optionB << "\n" << q.optionC << "\n";
-
-        while (true) {
-            cout << "Enter A, B, or C (or type 'exit' to return to main menu): ";
-            cin >> input;
-
-            // Convert to uppercase
-            for (auto& c : input) c = toupper(c);
-
-            if (input == "EXIT") {
-                cout << "Exiting quiz...\n";
-                return;
-            }
-
-            if (input.length() == 1 && (input[0] == 'A' || input[0] == 'B' || input[0] == 'C')) {
-                if (input[0] == q.correctAnswer) {
-                    cout << "Correct!\n";
-                    break; // Move to next question
-                } else {
-                    cout << "Wrong answer. Try again.\n";
-                }
-            } else {
-                cout << "Invalid choice. Please enter A, B, or C.\n";
-            }
-        }
-    }
-
-    // End of quiz
-    cout << "\n🎉 Quiz completed! 🎉\n";
-    cout << "Enter 0 to return to the main menu: ";
-    string wait;
-    while (true) {
-        cin >> wait;
-        if (wait == "0") break;
-        cout << "Please enter 0 to return: ";
-    }
-}
-
 //table of AI 
 void displayAIRulesTable() {
     cout << left << setw(5) << "No."
@@ -318,67 +253,194 @@ void displayAIRulesTable() {
 
 }
 
+
+void impactOfAIOnSociety() {
+    cout << "\033[2J\033[1;1H"; // Clear screen
+    cout << "\033[1m\nImpact of AI on Society:\033[0m\n";
+    cout << "AI is transforming the way we live and work:\n";
+    cout << "- Increases efficiency in healthcare, transport, and industry.\n";
+    cout << "- Helps predict trends and personalize user experiences.\n";
+    cout << "- Raises concerns around unemployment, surveillance, and ethics.\n";
+    cout << "- Changes education by enabling personalized learning.\n";
+    cout << "- Influences law enforcement, which must be balanced with rights.\n";
+
+    int input;
+    cout << "\nEnter 0 to return to the main menu: ";
+    while (true) {
+        if (!(cin >> input) || input != 0) {
+            cin.clear(); cin.ignore(10000, '\n');
+            cout << "Please enter 0 to return: ";
+        } else break;
+    }
+    cin.ignore(10000, '\n');
+}
+
+
+void famousAITechnologies() {
+    cout << "\033[2J\033[1;1H"; // Clear screen
+    cout << "\033[1m\nFamous AI Technologies:\033[0m\n";
+    cout << "Here are some well-known AI systems:\n";
+    cout << "- \033[1mChatGPT\033[0m: OpenAI's language model for conversation.\n";
+    cout << "- \033[1mSiri & Alexa\033[0m: Virtual assistants using NLP and voice AI.\n";
+    cout << "- \033[1mTesla Autopilot\033[0m: AI used in self-driving cars.\n";
+    cout << "- \033[1mIBM Watson\033[0m: AI for business, healthcare, and more.\n";
+    cout << "- \033[1mAlphaGo\033[0m: DeepMind’s AI that beat human champions in Go.\n";
+
+    int input;
+    cout << "\nEnter 0 to return to the main menu: ";
+    while (true) {
+        if (!(cin >> input) || input != 0) {
+            cin.clear(); cin.ignore(10000, '\n');
+            cout << "Please enter 0 to return: ";
+        } else break;
+    }
+    cin.ignore(10000, '\n');
+}
+
+
+void aiInEverydayLife() {
+    cout << "\033[2J\033[1;1H"; // Clear screen
+    cout << "\033[1m\nAI in Everyday Life:\033[0m\n";
+    cout << "AI impacts many daily activities:\n";
+    cout << "- Recommends videos on YouTube and shows on Netflix.\n";
+    cout << "- Powers smart assistants like Google Assistant and Siri.\n";
+    cout << "- Enables facial recognition on phones.\n";
+    cout << "- Optimizes traffic via GPS apps like Google Maps.\n";
+    cout << "- Detects spam and filters emails.\n";
+
+    int input;
+    cout << "\nEnter 0 to return to the main menu: ";
+    while (true) {
+        if (!(cin >> input) || input != 0) {
+            cin.clear(); cin.ignore(10000, '\n');
+            cout << "Please enter 0 to return: ";
+        } else break;
+    }
+    cin.ignore(10000, '\n');
+}
+
+//Quiz function
+void playQuiz() {
+    struct Question {
+        string question;
+        string optionA;
+        string optionB;
+        string optionC;
+        char correctAnswer;
+    };
+
+    vector<Question> quiz = {
+        {"What is the main goal of AI?", "A. To replace computers", "B. To simulate human intelligence", "C. To create websites", 'B'},
+        {"Which of the following is a branch of AI?", "A. Machine Learning", "B. Word Processing", "C. Spreadsheet Management", 'A'},
+        {"AI systems primarily learn through:", "A. Guesswork", "B. Randomness", "C. Data and algorithms", 'C'},
+        {"Which of these is a healthcare AI application?", "A. Weather forecasting", "B. Disease detection", "C. Building bridges", 'B'},
+        {"Which is a major challenge of AI?", "A. Too much oil consumption", "B. Privacy concerns", "C. Climate change", 'B'},
+        {"What might AI impact in the future?", "A. Agriculture only", "B. Just education", "C. All aspects of society", 'C'},
+        {"Ethical AI should avoid:", "A. Transparency", "B. Bias", "C. Accuracy", 'B'},
+        {"AI in finance is used for:", "A. Painting", "B. Fraud detection", "C. Playing music", 'B'},
+        {"Self-driving cars use AI to:", "A. Change colors", "B. Avoid obstacles", "C. Cook food", 'B'},
+        {"What does deep learning use?", "A. Binary trees", "B. Decision charts", "C. Neural networks", 'C'},
+        {"What is NLP in AI?", "A. Natural Language Processing", "B. Network Logic Protocol", "C. Non-Linear Programming", 'A'},
+        {"Which company developed AlphaGo?", "A. Microsoft", "B. DeepMind", "C. OpenAI", 'B'},
+        {"What kind of learning uses labeled data?", "A. Unsupervised learning", "B. Reinforcement learning", "C. Supervised learning", 'C'},
+        {"What is a Turing Test used for?", "A. Testing AI memory", "B. Checking AI ethics", "C. Measuring machine intelligence", 'C'},
+        {"What does an AI chatbot typically use?", "A. HTML tables", "B. Natural language understanding", "C. Image rendering", 'B'}
+    };
+
+    string input;
+    for (size_t i = 0; i < quiz.size(); ++i) {
+        const auto& q = quiz[i];
+
+        cout << "\nQuestion " << (i + 1) << ": " << q.question << "\n";
+        cout << q.optionA << "\n" << q.optionB << "\n" << q.optionC << "\n";
+
+        while (true) {
+            cout << "Enter A, B, or C (or type 'exit' to return to main menu): ";
+            cin >> input;
+
+            // Convert to uppercase
+            for (auto& c : input) c = toupper(c);
+
+            if (input == "EXIT") {
+                cout << "Exiting quiz...\n";
+                return;
+            }
+
+            if (input.length() == 1 && (input[0] == 'A' || input[0] == 'B' || input[0] == 'C')) {
+                if (input[0] == q.correctAnswer) {
+                    cout << "Correct!\n";
+                    break;
+                } else {
+                    cout << "Wrong answer. Try again.\n";
+                }
+            } else {
+                cout << "Invalid choice. Please enter A, B, or C.\n";
+            }
+        }
+    }
+
+    // End of quiz
+    cout << "\n🎉 Quiz completed! 🎉\n";
+    cout << "Enter 0 to return to the main menu: ";
+    string wait;
+    while (true) {
+        cin >> wait;
+        if (wait == "0") break;
+        cout << "Please enter 0 to return: ";
+    }
+}
+
+
 //main program
-int main ()
+int main()
 {
-    int choice;
     string userInput;
-    
-    do
+    int choice;
+
+    while (true)
     {
         showMenu();
-
-        cout << "Enter your choice (1-7) or type 'quiz' to play the quiz: ";
+        cout << "Enter your choice (1–10), type 'quiz' to play the quiz, or 'exit' to quit: ";
         cin >> userInput;
 
-        // Handle 'quiz' input
+        // Handle quiz input
         if (userInput == "quiz" || userInput == "QUIZ") {
-            playQuiz(); // Call your quiz function
+            playQuiz();
             continue;
         }
 
-        // Try to convert input to integer
+        // Handle exit input
+        if (userInput == "exit" || userInput == "EXIT") {
+            cout << "Exiting the program. Goodbye!\n";
+            break;
+        }
+
+        // Try to convert to integer choice
         try {
             choice = stoi(userInput);
         } catch (...) {
-            cout << "Invalid input. Please enter a number between 1 and 7 or 'quiz'.\n";
-            this_thread::sleep_for(chrono::seconds(3));
+            cout << "Invalid input. Please enter a number (1–10), 'quiz', or 'exit'.\n";
+            this_thread::sleep_for(chrono::seconds(2));
             continue;
         }
 
         switch (choice)
         {
-            case 1:
-                explainWhatIsAI();
-                break;
-            case 2:
-                explainHowAIWorks(choice);
-                break;
-            case 3:
-                explainApplicationsOfAI();
-                break;
-            case 4:
-                challengesofAI();
-                break;
-            case 5:
-                explainFutureOfAI();
-                break;
-            case 6:
-                explainEthicalConsiderations();
-                break;
-            case 7:
-                displayAIRulesTable();
-                break;
-            case 8:
-                cout << "Exiting the program. Goodbye!\n";
-                break;
+            case 1: explainWhatIsAI(); break;
+            case 2: explainHowAIWorks(choice); break;
+            case 3: explainApplicationsOfAI(); break;
+            case 4: challengesofAI(); break;
+            case 5: explainFutureOfAI(); break;
+            case 6: explainEthicalConsiderations(); break;
+            case 7: displayAIRulesTable(); break;
+            case 8: impactOfAIOnSociety(); break;
+            case 9: famousAITechnologies(); break;
+            case 10: aiInEverydayLife(); break;
             default:
                 cout << "Invalid choice. Please select a valid option.\n";
-                sleep(2);
-                break;
+                this_thread::sleep_for(chrono::seconds(2));
         }
-
-    } while (choice != 8);
+    }
 
     return 0;
 }
