@@ -269,6 +269,53 @@ void playQuiz() {
     }
 }
 
+//table of AI 
+void displayAIRulesTable() {
+    cout << left << setw(5) << "No."
+         << setw(25) << "Rule"
+         << "Description" << endl;
+    cout << string(70, '-') << endl;
+
+    cout << left << setw(5) << 1 << setw(25) << "Data is the Foundation"
+         << "AI learns from large, high-quality data." << endl;
+
+    cout << left << setw(5) << 2 << setw(25) << "Algorithms Drive AI"
+         << "Algorithms process data and make decisions." << endl;
+
+    cout << left << setw(5) << 3 << setw(25) << "Learning Types"
+         << "Supervised, Unsupervised, and Reinforcement learning." << endl;
+
+    cout << left << setw(5) << 4 << setw(25) << "Generalization"
+         << "AI should work well on new unseen data." << endl;
+
+    cout << left << setw(5) << 5 << setw(25) << "Feedback Improves AI"
+         << "Learning from new data improves accuracy." << endl;
+
+    cout << left << setw(5) << 6 << setw(25) << "Ethics and Fairness"
+         << "AI must be fair, unbiased, and ethical." << endl;
+
+    cout << left << setw(5) << 7 << setw(25) << "Human-in-the-Loop"
+         << "Human oversight is vital for critical AI tasks." << endl;
+
+    cout << left << setw(5) << 8 << setw(25) << "Explainability"
+         << "Users should understand AI decisions." << endl;
+
+         int input;
+    cout << "\nEnter 0 to return to the main menu: ";
+        while (true) {
+            if (!(cin >> input)) {
+                cin.clear(); // Clear the error
+                cin.ignore(10000, '\n'); // Discard invalid input
+                cout << "Please enter 0 to return: ";
+            } else if (input == 0) {
+                break;
+            } else {
+                cout << "Please enter 0 to return: ";
+            }
+        }
+    cin.ignore(10000, '\n'); // Clean up any leftover input
+
+}
 
 //main program
 int main ()
@@ -319,6 +366,9 @@ int main ()
                 explainEthicalConsiderations();
                 break;
             case 7:
+                displayAIRulesTable();
+                break;
+            case 8:
                 cout << "Exiting the program. Goodbye!\n";
                 break;
             default:
