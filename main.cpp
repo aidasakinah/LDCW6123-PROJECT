@@ -2,6 +2,9 @@
 #include <windows.h>
 #include <string>
 #include <unistd.h>
+#include <thread> 
+#include <chrono>
+#include <vector>
 
 using namespace std;
 
@@ -23,6 +26,7 @@ void showMenu()
     cout << "5. What is the future of AI?\n";
     cout << "6. What are ethical considerations in AI?\n";
     cout << "7. Exit\n";
+    cout << "\nAfter study, enter 'quiz' to test your understanding!!\n";
     cout << "==========================\n";
 
 }
@@ -198,24 +202,101 @@ void explainEthicalConsiderations()
     cin.ignore(10000, '\n'); // Clean up any leftover input
 }
 
+//Quiz function
+void playQuiz() {
+    struct Question {
+        string question;
+        string optionA;
+        string optionB;
+        string optionC;
+        char correctAnswer;
+    };
+
+    vector<Question> quiz = {
+        {"What is the main goal of AI?", "A. To replace computers", "B. To simulate human intelligence", "C. To create websites", 'B'},
+        {"Which of the following is a branch of AI?", "A. Machine Learning", "B. Word Processing", "C. Spreadsheet Management", 'A'},
+        {"AI systems primarily learn through:", "A. Guesswork", "B. Randomness", "C. Data and algorithms", 'C'},
+        {"Which of these is a healthcare AI application?", "A. Weather forecasting", "B. Disease detection", "C. Building bridges", 'B'},
+        {"Which is a major challenge of AI?", "A. Too much oil consumption", "B. Privacy concerns", "C. Climate change", 'B'},
+        {"What might AI impact in the future?", "A. Agriculture only", "B. Just education", "C. All aspects of society", 'C'},
+        {"Ethical AI should avoid:", "A. Transparency", "B. Bias", "C. Accuracy", 'B'},
+        {"AI in finance is used for:", "A. Painting", "B. Fraud detection", "C. Playing music", 'B'},
+        {"Self-driving cars use AI to:", "A. Change colors", "B. Avoid obstacles", "C. Cook food", 'B'},
+        {"What does deep learning use?", "A. Binary trees", "B. Decision charts", "C. Neural networks", 'C'}
+    };
+
+    string input;
+    for (size_t i = 0; i < quiz.size(); ++i) {
+        const auto& q = quiz[i];
+
+        // Show question and options once
+        cout << "\nQuestion " << (i + 1) << ": " << q.question << "\n";
+        cout << q.optionA << "\n" << q.optionB << "\n" << q.optionC << "\n";
+
+        while (true) {
+            cout << "Enter A, B, or C (or type 'exit' to return to main menu): ";
+            cin >> input;
+
+            // Convert to uppercase
+            for (auto& c : input) c = toupper(c);
+
+            if (input == "EXIT") {
+                cout << "Exiting quiz...\n";
+                return;
+            }
+
+            if (input.length() == 1 && (input[0] == 'A' || input[0] == 'B' || input[0] == 'C')) {
+                if (input[0] == q.correctAnswer) {
+                    cout << "Correct!\n";
+                    break; // Move to next question
+                } else {
+                    cout << "Wrong answer. Try again.\n";
+                }
+            } else {
+                cout << "Invalid choice. Please enter A, B, or C.\n";
+            }
+        }
+    }
+
+    // End of quiz
+    cout << "\n🎉 Quiz completed! 🎉\n";
+    cout << "Enter 0 to return to the main menu: ";
+    string wait;
+    while (true) {
+        cin >> wait;
+        if (wait == "0") break;
+        cout << "Please enter 0 to return: ";
+    }
+}
 
 
+//main program
 int main ()
 {
     int choice;
+    string userInput;
     
     do
     {
-        //displays the menu first
         showMenu();
 
-        cout << "Enter your choice (1-7): ";
-            while (!(cin >> choice)) {
-                cout << "Invalid input. Please enter a number between 1 and 7: ";
-                cin.clear(); // Clear error flag
-                cin.ignore(10000, '\n'); // Discard invalid input
-            }
-        cin.ignore(); // flush leftover newline
+        cout << "Enter your choice (1-7) or type 'quiz' to play the quiz: ";
+        cin >> userInput;
+
+        // Handle 'quiz' input
+        if (userInput == "quiz" || userInput == "QUIZ") {
+            playQuiz(); // Call your quiz function
+            continue;
+        }
+
+        // Try to convert input to integer
+        try {
+            choice = stoi(userInput);
+        } catch (...) {
+            cout << "Invalid input. Please enter a number between 1 and 7 or 'quiz'.\n";
+            this_thread::sleep_for(chrono::seconds(3));
+            continue;
+        }
 
         switch (choice)
         {
