@@ -1,5 +1,7 @@
 #include <iostream>
+#include <windows.h>
 #include <string>
+#include <unistd.h>
 
 using namespace std;
 
@@ -35,6 +37,14 @@ void explainWhatIsAI()
     cout << "that can perform tasks that typically require human intelligence.\n";
     cout << "These tasks include learning, reasoning, problem-solving, understanding language, and perception.\n";
     cout << "AI combines algorithms, data, and computing power to mimic human cognitive functions in machines.\n";
+
+    int input;
+    cout << "\nEnter 0 to return to the main menu: ";
+    while (true) {
+        cin >> input;
+        if (input == 0) break;
+        cout << "Please enter 0 to return: ";
+    }
 }
 
 //function to explain how AI works
@@ -46,6 +56,14 @@ void explainHowAIWorks(int choice)
     cout << "Artificial Intelligence (AI) works by simulating human intelligence processes through algorithms and computational models.\n";
     cout << "It involves machine learning, where systems learn from data, and deep learning, which uses neural networks to analyze complex patterns.\n";
     cout << "AI systems can process vast amounts of information, recognize patterns, and make decisions based on learned experiences.\n";
+
+    int input;
+    cout << "\nEnter 0 to return to the main menu: ";
+    while (true) {
+        cin >> input;
+        if (input == 0) break;
+        cout << "Please enter 0 to return: ";
+    }
 }
 
 // Function to explain the applications of AI
@@ -61,6 +79,14 @@ void explainApplicationsOfAI()
     cout << "5. Retail          : Online stores use AI for product recommendations and managing stock.\n";
     cout << "6. Entertainment   : AI creates music, suggests movies, and powers video game characters.\n";
     cout << "7. Customer Service: Chatbots and virtual assistants answer questions 24/7.\n";
+
+    int input;
+    cout << "\nEnter 0 to return to the main menu: ";
+    while (true) {
+        cin >> input;
+        if (input == 0) break;
+        cout << "Please enter 0 to return: ";
+    }
 }
 
 // Function to explain the challenges of AI
@@ -80,6 +106,14 @@ void challengesofAI()
     cout << "5. Security    : AI can be hacked or misused.\n";
     cout << "6. Trust       : People may not fully trust AI decisions.\n";
     cout << "7. Control     : Hard to control or stop powerful AI systems.\n";
+
+    int input;
+    cout << "\nEnter 0 to return to the main menu: ";
+    while (true) {
+        cin >> input;
+        if (input == 0) break;
+        cout << "Please enter 0 to return: ";
+    }
 }
 
 // Function to explain the Future of AI
@@ -89,6 +123,37 @@ void explainFutureOfAI() {
     cout << "AI will become more advanced and personalized, playing a key role in sectors like healthcare, education, transportation and smart cities.\n";
     cout << "We may see the development of Artificial General Intelligence (AGI), where machines can perform any intellectual task that a human can do.\n";
     cout << "As AI continues to evolve, it will likely reshape how we work, live and interact with technology, raising both opportunities and ethical challenges.\n";
+
+    int input;
+    cout << "\nEnter 0 to return to the main menu: ";
+    while (true) {
+        cin >> input;
+        if (input == 0) break;
+        cout << "Please enter 0 to return: ";
+    }
+}
+
+// Function to explain the ethical considerations in AI
+void explainEthicalConsiderations() 
+{
+    // Clear the console for better readability
+    cout << "\033[2J\033[1;1H"; // ANSI escape code to clear the screen
+    cout << "\033[1m\nEthical Considerations in Artificial Intelligence:\n\033[0m";
+    cout << "1. Bias and Fairness     : AI systems can reflect or amplify societal biases if not trained properly.\n";
+    cout << "2. Transparency          : Many AI systems are 'black boxes'—it's hard to understand how they make decisions.\n";
+    cout << "3. Accountability        : It's often unclear who is responsible when AI makes a mistake.\n";
+    cout << "4. Privacy               : AI may use large amounts of personal data, raising privacy concerns.\n";
+    cout << "5. Consent               : Users may not always be aware their data is being used for AI.\n";
+    cout << "6. Job Displacement      : Ethical concerns arise from AI replacing human workers.\n";
+    cout << "7. Autonomous Decisions  : Self-driving cars and military drones raise questions about life-and-death decisions by machines.\n";
+
+    int input;
+    cout << "\nEnter 0 to return to the main menu: ";
+    while (true) {
+        cin >> input;
+        if (input == 0) break;
+        cout << "Please enter 0 to return: ";
+    }
 }
 
 
@@ -132,10 +197,11 @@ int main ()
                 break;
             default:
                 cout << "Invalid choice. Please select a valid option.\n";
+                sleep(3);
                 break;
         }
 
-    } while (choice ! = 7);
+    } while (choice != 7);
 
     return 0;
 }
