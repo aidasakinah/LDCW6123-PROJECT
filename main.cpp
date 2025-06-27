@@ -1,5 +1,5 @@
 #include <iostream>
-#include <windows.h>
+#include <iomanip>
 #include <string>
 #include <unistd.h>
 #include <thread> 
@@ -25,7 +25,7 @@ void showMenu()
     cout << "4. What are the challenges of AI?\n";
     cout << "5. What is the future of AI?\n";
     cout << "6. What are ethical considerations in AI?\n";
-    cout << "7. Basic Rules of AI\n"
+    cout << "7. Basic Rules of AI\n";
     cout << "8. Exit\n";
     cout << "\nAfter study, enter 'quiz' to test your understanding!!\n";
     cout << "==========================\n";
