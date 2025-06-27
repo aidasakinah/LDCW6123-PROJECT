@@ -25,7 +25,8 @@ void showMenu()
     cout << "4. What are the challenges of AI?\n";
     cout << "5. What is the future of AI?\n";
     cout << "6. What are ethical considerations in AI?\n";
-    cout << "7. Exit\n";
+    cout << "7. Basic Rules of AI\n"
+    cout << "8. Exit\n";
     cout << "\nAfter study, enter 'quiz' to test your understanding!!\n";
     cout << "==========================\n";
 
@@ -377,7 +378,7 @@ int main ()
                 break;
         }
 
-    } while (choice != 7);
+    } while (choice != 8);
 
     return 0;
 }
