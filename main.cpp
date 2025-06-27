@@ -40,11 +40,18 @@ void explainWhatIsAI()
 
     int input;
     cout << "\nEnter 0 to return to the main menu: ";
-    while (true) {
-        cin >> input;
-        if (input == 0) break;
-        cout << "Please enter 0 to return: ";
-    }
+        while (true) {
+            if (!(cin >> input)) {
+                cin.clear(); // Clear the error
+                cin.ignore(10000, '\n'); // Discard invalid input
+                cout << "Please enter 0 to return: ";
+            } else if (input == 0) {
+                break;
+            } else {
+                cout << "Please enter 0 to return: ";
+            }
+        }
+    cin.ignore(10000, '\n'); // Clean up any leftover input
 }
 
 //function to explain how AI works
@@ -59,11 +66,18 @@ void explainHowAIWorks(int choice)
 
     int input;
     cout << "\nEnter 0 to return to the main menu: ";
-    while (true) {
-        cin >> input;
-        if (input == 0) break;
-        cout << "Please enter 0 to return: ";
-    }
+        while (true) {
+            if (!(cin >> input)) {
+                cin.clear(); // Clear the error
+                cin.ignore(10000, '\n'); // Discard invalid input
+                cout << "Please enter 0 to return: ";
+            } else if (input == 0) {
+                break;
+            } else {
+                cout << "Please enter 0 to return: ";
+            }
+        }
+    cin.ignore(10000, '\n'); // Clean up any leftover input
 }
 
 // Function to explain the applications of AI
@@ -82,11 +96,18 @@ void explainApplicationsOfAI()
 
     int input;
     cout << "\nEnter 0 to return to the main menu: ";
-    while (true) {
-        cin >> input;
-        if (input == 0) break;
-        cout << "Please enter 0 to return: ";
-    }
+        while (true) {
+            if (!(cin >> input)) {
+                cin.clear(); // Clear the error
+                cin.ignore(10000, '\n'); // Discard invalid input
+                cout << "Please enter 0 to return: ";
+            } else if (input == 0) {
+                break;
+            } else {
+                cout << "Please enter 0 to return: ";
+            }
+        }
+    cin.ignore(10000, '\n'); // Clean up any leftover input
 }
 
 // Function to explain the challenges of AI
@@ -109,11 +130,18 @@ void challengesofAI()
 
     int input;
     cout << "\nEnter 0 to return to the main menu: ";
-    while (true) {
-        cin >> input;
-        if (input == 0) break;
-        cout << "Please enter 0 to return: ";
-    }
+        while (true) {
+            if (!(cin >> input)) {
+                cin.clear(); // Clear the error
+                cin.ignore(10000, '\n'); // Discard invalid input
+                cout << "Please enter 0 to return: ";
+            } else if (input == 0) {
+                break;
+            } else {
+                cout << "Please enter 0 to return: ";
+            }
+        }
+    cin.ignore(10000, '\n'); // Clean up any leftover input
 }
 
 // Function to explain the Future of AI
@@ -126,11 +154,18 @@ void explainFutureOfAI() {
 
     int input;
     cout << "\nEnter 0 to return to the main menu: ";
-    while (true) {
-        cin >> input;
-        if (input == 0) break;
-        cout << "Please enter 0 to return: ";
-    }
+        while (true) {
+            if (!(cin >> input)) {
+                cin.clear(); // Clear the error
+                cin.ignore(10000, '\n'); // Discard invalid input
+                cout << "Please enter 0 to return: ";
+            } else if (input == 0) {
+                break;
+            } else {
+                cout << "Please enter 0 to return: ";
+            }
+        }
+    cin.ignore(10000, '\n'); // Clean up any leftover input
 }
 
 // Function to explain the ethical considerations in AI
@@ -149,11 +184,18 @@ void explainEthicalConsiderations()
 
     int input;
     cout << "\nEnter 0 to return to the main menu: ";
-    while (true) {
-        cin >> input;
-        if (input == 0) break;
-        cout << "Please enter 0 to return: ";
-    }
+        while (true) {
+            if (!(cin >> input)) {
+                cin.clear(); // Clear the error
+                cin.ignore(10000, '\n'); // Discard invalid input
+                cout << "Please enter 0 to return: ";
+            } else if (input == 0) {
+                break;
+            } else {
+                cout << "Please enter 0 to return: ";
+            }
+        }
+    cin.ignore(10000, '\n'); // Clean up any leftover input
 }
 
 
@@ -167,10 +209,13 @@ int main ()
         //displays the menu first
         showMenu();
 
-        // Prompt the user for their choice
         cout << "Enter your choice (1-7): ";
-        cin >> choice;
-        cin.ignore(); // Clear the newline character from the input buffer
+            while (!(cin >> choice)) {
+                cout << "Invalid input. Please enter a number between 1 and 7: ";
+                cin.clear(); // Clear error flag
+                cin.ignore(10000, '\n'); // Discard invalid input
+            }
+        cin.ignore(); // flush leftover newline
 
         switch (choice)
         {
@@ -197,7 +242,7 @@ int main ()
                 break;
             default:
                 cout << "Invalid choice. Please select a valid option.\n";
-                sleep(3);
+                sleep(2);
                 break;
         }
 
